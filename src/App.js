@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="container">
-      <News dafaultQuery="ukraine" today={today} />
+      <News defaultQuery="ukraine" today={today} />
     </div>
   );
 }
