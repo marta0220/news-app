@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import News from "./News.js";
 
 function App() {
+  let now = new Date();
+  let month = now.getMonth() + 1;
+  let day = now.getDate();
+  let year = now.getFullYear();
+  let today = `${year}-${month}-${day}`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <News dafaultQuery="ukraine" today={today} />
     </div>
   );
 }
