@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import NewsInfo from "./NewsInfo";
 
 export default function News(props) {
   let [date, setDate] = useState(props.today);
@@ -7,7 +8,7 @@ export default function News(props) {
   let [ready, setReady] = useState(false);
   let [info, setInfo] = useState(null);
   function showResponse(response) {
-    setInfo(response);
+    setInfo(response.data.articles);
     setReady(true);
   }
   function search() {
@@ -38,7 +39,7 @@ export default function News(props) {
 
           <input type="submit" />
         </form>
-        {info.data.articles[0].title}
+        <NewsInfo articles={info} />
       </div>
     );
   } else {
